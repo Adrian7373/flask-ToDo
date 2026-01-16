@@ -1,0 +1,199 @@
+body {
+    background-color: #1C1C1E;
+}
+
+*{
+    font-family: 'Lucida Grande', Arial, sans-serif;
+}
+
+a{
+    display: inline-block;
+}
+
+.container {
+    width: 1300px;
+    height: 880px;
+    padding: 24px 24px;
+    margin: auto;
+    border-radius: 50px;
+    background-color: #242426;
+    border: 1px solid white;
+}
+
+
+.leftDiv {
+    padding: 2px 2px;
+    width: 1290px;
+    height: 873px;
+    border-radius: 25px;
+}
+
+.divHolder{
+    display: flex;
+}
+
+.leftDiv :nth-child(1) {
+    text-align: center;
+}
+
+.tableContainer{
+    margin: 0 auto ;
+    width: 1200px;
+    height: 300px;
+    overflow: scroll;
+    background-color: #3A3A3C;
+}
+
+.tableContainer2{
+    margin: 0 auto ;
+    width: 1200px;
+    height: 300px;
+    overflow: scroll;
+    background-color: #3A3A3C;
+}
+
+td, th{
+    border: 1px solid;
+    color: #FAFAFA;
+}
+
+table{
+    table-layout: fixed;
+    width: 1200px;
+    border-collapse: collapse;
+}
+
+.subtaskHeader{
+    font-size: 60px;
+}
+
+td{
+    font-size: 20px;
+    overflow-wrap: break-word;
+}
+
+
+.utility{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#new_subtask{
+    width: 600px;
+    height: 30px;
+}
+button{
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+}
+
+.signOut{
+    display: block;
+    margin: 20px auto auto auto;
+}
+
+#taskHeader{
+    font-size: 30px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: #FAFAFA;
+}
+
+.completedHeader{
+    font-size: 30px ;
+}
+
+.subtaskTable th:nth-child(1){
+    width: 80%;
+}
+
+.subtaskTable th:nth-child(2){
+    width: 20%;
+}
+
+.subtaskTable2 th:nth-child(1){
+    width: 70%;
+}
+
+.subtaskTable2 th:nth-child(2){
+    width: 15%;
+}
+
+.subtaskTable2 th:nth-child(3){
+    width: 15%;
+    font-size: 50px;
+}
+
+label, h1{
+    color: #FAFAFA;
+}
+
+.restoreButton{
+    background-color: #20abbc;
+    border-style: none;
+    border-radius: 5px;
+    color: #FAFAFA;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+.permDelete{
+    background-color: #FF6769;
+    border-style: none;
+    border-radius: 5px;
+    color: #FAFAFA;
+    font-size: 16px;
+}
+
+.restoreButton:hover{
+    background-color: #37bdcf;
+}
+
+.permDelete:hover{
+    background-color: #fd9496;
+}
+
+a{
+    text-decoration: none;
+}
+
+.completeSubtaskButton{
+    background-color: #61b538;
+    border-style: none;
+    border-radius: 5px;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.completeSubtaskButton:hover{
+    background-color: #78d847
+}
+
+.deleteSubtaskButton{
+    background-color: #FF6769;
+    border-style: none;
+    border-radius: 5px;
+    color: #FAFAFA;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.deleteSubtaskButton:hover{
+    background-color: #fb8383
+}
+
+#submit_new{
+    width: 150px;
+    height: 40px;
+    background-color: #61b538;
+    border-style: none;
+    border-radius: 5px;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+#submit_new:hover{
+    background-color: #72d840
+}

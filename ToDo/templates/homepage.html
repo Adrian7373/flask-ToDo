@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <link rel="stylesheet" href="../static/homepage.css">
+<title>Dashboard</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="divHolder">
+            <div class="leftDiv">
+                <h2 id="greet">Good Day, {{ current_user.username }}</h2>
+                <div class="tableContainer">
+                    <table>
+                        <tr>
+                            <th>Folders</th>
+                            <th>Tasks</th>
+                            <th>Actions</th>
+                        </tr>
+                        {% for folder, task_count in data %}
+                        <tr>
+                            <td id="folder">{{ folder.name }}</td>
+                            <td>{{ task_count }}</td>
+                            <td><a href="{{ url_for('view_folder_task', folder_id=folder.id) }}"><button class="navigateButton">Navigate</button></a><a href="{{ url_for('delete_folder', folder_id=folder.id) }}"><button class="deleteButton">Delete Folder</button></a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="utility">
+                    <form method="POST">
+                        <input type="text" id="new_list" name="new_list" maxlength="100">
+                        <button type="submit" id="submit_new" name="submit_new">Add Folder</button>
+                    </form>
+                </div>
+                <a href="{{ url_for('logout_page') }}"><button class="signOut">Sign out</button></a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <link rel="stylesheet" href="../static/tasks_view.css">
+<title>Folder: {{ folder.name }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="divHolder">
+            <div class="leftDiv">
+                <h2 id="folderHeader">Folder: {{ folder.name }}</h2>
+                <div class="tableContainer">
+                    <table class="taskTable">
+                        <tr>
+                            <th class="taskHeader">Tasks</th>
+                            <th class="taskHeader">Due Date</th>
+                            <th class="taskHeader">Actions</th>
+                        </tr>
+                        {% for task in tasks %}
+                        <tr>
+                            <td>{{ task.name }}</td>
+                            <td>{{ task.dueDate }}</td>
+                            <td id="actiontd"><a href="{{ url_for('complete_task', folder_id=folder.id, task_id=task.id) }}"><button class="completeButton">Complete</button></a><a href="{{ url_for('view_task_details', folder_id=folder.id, task_id=task.id) }}"><button class="navigateButton">Navigate</button></a></td>
+                            <!--<a href="{{ url_for('delete_task', folder_id=folder.id, task_id=task.id) }}"><button>Delete Task</button></a> -->
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="utility">
+                    <form method="POST">
+                        <input type="text" id="new_task" name="new_task" maxlength="100">
+                        <label for="date">Due date:</label>
+                        <input type="datetime-local" id="date" name="date" required>
+                        <button type="submit" id="submit_new" name="submit_new">Add Task</button>
+                    </form>
+                </div>
+
+                <h1 style="text-align: center">------------------------------------- Completed ------------------------------------</h1>
+                <div class="tableContainer2">
+                    <table class="taskTable2">
+                        <tr>
+                            <th class="completedHeader">
+                                Completed
+                            </th>
+                            <th class="completedHeader">
+                                Date Finished
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                        {% for completed_task in completed_tasks %}
+                        <tr>
+                            <td>{{ completed_task.name }}</td>
+                            <td>{{ completed_task.datetime_completed }}</td>
+                            <td><a href="{{ url_for('restore_complete_task', folder_id=folder.id, completed_task_id=completed_task.id) }}"><button class="restoreButton">Restore</button></a><a href="{{ url_for('perm_delete_task', folder_id=folder.id,completed_task_id=completed_task.id) }}"><button class="permDelete">Delete Permanently</button></a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+                <a href="{{ url_for('home_page') }}"><button class="signOut">Go Back</button></a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

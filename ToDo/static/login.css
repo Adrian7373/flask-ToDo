@@ -1,0 +1,141 @@
+*{
+    font-family: 'Lucida Grande', Arial, sans-serif;
+}
+
+.divHolder{
+    display: flex;
+    border: 1px solid;
+    justify-content: center;
+    width: 800px;
+    margin: 100px auto;
+    height: 700px;
+    background-color: #242426;
+    border-radius: 30px;
+    color:white;
+}
+
+.divHolder h1{
+    margin-top: 125px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.formLabel{
+    font-size: 24px;
+}
+
+.formHolder{
+    display: flex;
+    flex-direction: column;
+}
+
+.formField{
+    height: 30px;
+}
+
+.submitButton{
+    box-shadow: 0px 0px 5px;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 24px;
+    background-color: greenyellow;
+    width: 200px;
+    height: 50px;
+    display: block;
+    margin: 20px auto auto auto;
+    cursor: pointer;
+}
+
+p{
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+body {
+    background-color: #1C1C1E;
+}
+
+.container {
+    background-color: #FAFAFA;
+    width: 700px;
+    height: 880px;
+    padding: 24px 24px;
+    border: 1px solid black;
+    margin: auto;
+    border-radius: 50px;
+    border-style: none;
+}
+
+
+.leftDiv {
+    padding: 2px 2px;
+    border: 2px solid green;
+    width: 690px;
+    height: 873px;
+    border-radius: 25px;
+}
+
+.divHolder{
+    display: flex;
+}
+
+.leftDiv :nth-child(1) {
+    text-align: center;
+}
+
+.tableContainer{
+    margin: 0 auto ;
+    width: 600px;
+}
+
+td, th{
+    border: 1px solid;
+}
+
+table{
+    width: 600px;
+}
+
+th{
+    font-size: 60px;
+}
+
+td{
+    height: 20px;
+    font-size: 30px;
+}
+
+.utility{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    width: 400px;
+    height: 30px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+}
+
+.signOut{
+    display: block;
+    margin: 20px auto auto auto;
+}
+
+#greet{
+    font-size: 40px;
+    margin: 20px auto 5px;
+}
+
+a{
+    text-decoration: none;
+    color: skyblue;
+}
+
+
+

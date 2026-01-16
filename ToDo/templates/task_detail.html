@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='task_detail.css') }}">
+    <title>Task: {{ task.name }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="divHolder">
+            <div class="leftDiv">
+                <h2 id="taskHeader">Task: {{ task.name }}</h2>
+                <div class="tableContainer">
+                    <table class="subtaskTable">
+                        <tr>
+                            <th class="subtaskHeader">Subtasks</th>
+                            <th class="subtaskHeader">Actions</th>
+                        </tr>
+                        {% for subtask in subtasks %}
+                        <tr>
+                            <td>{{ subtask.name }}</td>
+                            <td id="actiontd"><a href="{{ url_for('complete_subtask', folder_id=folder.id, task_id=task.id, subtask_id=subtask.id) }}"><button class="completeSubtaskButton">Complete</button></a><a href="{{ url_for('delete_subtask', folder_id=folder.id,task_id=task.id,subtask_id=subtask.id) }}"><button class="deleteSubtaskButton">Delete Subtask</button></a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="utility">
+                    <form method="POST">
+                        <input type="text" id="new_subtask" name="new_subtask" maxlength="100">
+                        <button type="submit" id="submit_new" name="submit_new">Add Task</button>
+                    </form>
+                </div>
+
+                <h1 style="text-align: center">-----------------------------------Completed----------------------------------</h1>
+                <div class="tableContainer2">
+                    <table class="subtaskTable2">
+                        <tr>
+                            <th class="completedHeader">
+                                Completed
+                            </th>
+                            <th class="completedHeader">
+                                Date Finished
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                        {% for completed_subtask in completed_subtasks %}
+                        <tr>
+                            <td>{{ completed_subtask.name }}</td>
+                            <td>{{ completed_subtask.datetime_completed }}</td>
+                            <td><a href="{{ url_for('restore_complete_subtask', folder_id=folder.id, task_id=task.id, completed_subtask_id=completed_subtask.id) }}"><button class="restoreButton">Restore</button></a></a><a href="{{ url_for('perm_delete_subtask', folder_id=folder.id,task_id=task.id,completed_subtask_id=completed_subtask.id) }}"><button class="permDelete">Delete Permanently</button></a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+                <a href="{{ url_for('view_folder_task', folder_id = folder.id) }}"><button class="signOut">Go Back</button></a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
